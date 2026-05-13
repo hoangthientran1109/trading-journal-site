@@ -4,14 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>JournaMate — Hệ Thống Trading Toàn Diện</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='28' fill='none' stroke='%23c9a84c' stroke-width='2.5'/%3E%3Ccircle cx='32' cy='32' r='22' fill='none' stroke='%23c9a84c' stroke-width='0.8' opacity='0.4'/%3E%3Cpath d='M18 40 Q18 24 32 24 Q46 24 46 40' stroke='%23c9a84c' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3Cpath d='M22 44 L22 20 M28 44 L28 20 M34 44 L34 20 M40 44 L40 20' stroke='%23c9a84c' stroke-width='1.5' fill='none' opacity='0.5'/%3E%3Ccircle cx='32' cy='20' r='2.5' fill='%23c9a84c'/%3E%3C/svg%3E">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{background:#000;color:#e0e0e0;font-family:Arial,sans-serif;line-height:1.6}
 a{color:inherit;text-decoration:none}
 
+h2{font-size:30px;color:#c9a84c;text-align:center;letter-spacing:1px}
+
 .hero{text-align:center;padding:100px 20px 60px;max-width:750px;margin:0 auto}
 .hero-badge{display:inline-block;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.25);color:#c9a84c;padding:4px 16px;border-radius:20px;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:20px}
+.hero-logo{margin-bottom:16px;display:flex;justify-content:center}
 .hero h1{font-size:46px;font-weight:800;color:#c9a84c;letter-spacing:1px;margin-bottom:16px}
 .hero .tagline{font-size:22px;color:#888;margin-bottom:12px;line-height:1.5;font-weight:300}
 .hero .sub{font-size:18px;color:#666;margin-bottom:36px;line-height:1.6}
@@ -25,10 +29,10 @@ a{color:inherit;text-decoration:none}
 .divider{width:60px;height:2px;background:#c9a84c;margin:0 auto;border-radius:1px}
 
 .section{padding:60px 20px;max-width:1000px;margin:0 auto}
-.section h2{text-align:center;font-size:30px;color:#c9a84c;margin-bottom:12px;letter-spacing:1px}
+.section h2{margin-bottom:12px}
 
 .products{padding:50px 20px 80px}
-.products h2{text-align:center;margin-bottom:8px}
+.products h2{margin-bottom:8px}
 .products-sub{text-align:center;color:#666;font-size:15px;margin-bottom:40px}
 .prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1050px;margin:0 auto}
 .prod-card{background:#0d0d0d;border:1px solid #1a1a1a;border-radius:10px;padding:28px 22px;display:flex;flex-direction:column;transition:all .2s}
@@ -44,6 +48,7 @@ a{color:inherit;text-decoration:none}
 .prod-features li::before{content:'\2713';position:absolute;left:0;color:#c9a84c;font-size:12px}
 .prod-price{font-size:32px;font-weight:800;color:#c9a84c;margin-bottom:4px}
 .prod-price-note{font-size:13px;color:#555;margin-bottom:14px}
+.prod-trust{font-size:13px;color:#4caf50;font-weight:700;background:rgba(76,175,80,.08);border:1px solid rgba(76,175,80,.2);border-radius:6px;padding:8px 10px;text-align:center;margin-bottom:14px}
 .prod-cta{display:block;text-align:center;background:#c9a84c;color:#000;padding:12px;border-radius:6px;font-weight:700;font-size:15px;transition:all .2s;margin-top:auto}
 .prod-cta:hover{opacity:.85}
 .prod-cta.outline{background:transparent;border:1px solid #c9a84c;color:#c9a84c}
@@ -52,13 +57,28 @@ a{color:inherit;text-decoration:none}
 .prod-detail-btn:hover{color:#c9a84c;border-color:var(--border2)}
 
 .detail-section{padding:40px 20px 20px;max-width:1050px;margin:0 auto;border-top:1px solid #1a1a1a}
-.detail-section h3{font-size:24px;color:#c9a84c;margin-bottom:6px;text-align:center}
+.detail-section h3{font-size:30px;color:#c9a84c;margin-bottom:6px;text-align:center}
 .detail-section .detail-sub{text-align:center;color:#666;font-size:14px;margin-bottom:24px}
-.detail-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
-.detail-gallery img{width:100%;border-radius:6px;border:1px solid #1a1a1a;transition:all .2s;cursor:pointer}
-.detail-gallery img:hover{border-color:#c9a84c;transform:scale(1.02)}
+.detail-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.detail-gallery img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:6px;border:1px solid #fff;transition:all .2s;cursor:pointer}
+.detail-gallery img:hover{border-color:#fff;transform:scale(1.02)}
+.pass-gallery img{aspect-ratio:auto;object-fit:contain}
 .detail-back{display:block;text-align:center;color:#888;font-size:13px;margin-top:20px;cursor:pointer;transition:color .2s}
 .detail-back:hover{color:#c9a84c}
+
+.course-content{max-width:750px;margin:0 auto}
+.course-tier{display:flex;gap:16px;align-items:flex-start;background:#0d0d0d;border:1px solid #1a1a1a;border-radius:8px;padding:20px 24px;margin-bottom:14px}
+.course-tier:hover{border-color:#fff}
+.tier-num{width:44px;height:44px;background:#c9a84c;color:#000;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;flex-shrink:0}
+.tier-info{flex:1}
+.tier-info h4{font-size:17px;color:#c9a84c;margin-bottom:8px}
+.tier-info ul{list-style:none}
+.tier-info li{font-size:14px;color:#999;padding:3px 0;padding-left:16px;position:relative}
+.tier-info li::before{content:'\2713';position:absolute;left:0;color:#c9a84c;font-size:12px}
+.tier-thumb{width:120px;height:120px;border-radius:6px;object-fit:cover;flex-shrink:0}
+.course-cta{display:block;text-align:center;background:#c9a84c;color:#000;padding:14px;border-radius:6px;font-weight:700;font-size:16px;margin-top:24px;transition:all .2s}
+.course-cta:hover{opacity:.85}
+.trust-banner{font-size:14px;color:#4caf50;font-weight:700;background:rgba(76,175,80,.08);border:1px solid rgba(76,175,80,.2);border-radius:6px;padding:10px 16px;text-align:center;margin:16px auto 0;max-width:450px}
 
 .lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:10000;align-items:center;justify-content:center;flex-direction:column;padding:20px}
 .lightbox.active{display:flex}
@@ -66,39 +86,11 @@ a{color:inherit;text-decoration:none}
 .lightbox .lb-close{position:absolute;top:20px;right:24px;color:#fff;font-size:32px;cursor:pointer;z-index:10}
 .lightbox .lb-close:hover{color:#c9a84c}
 
-.bundle{background:linear-gradient(135deg,rgba(201,168,76,.06),rgba(201,168,76,.02));border:2px solid #c9a84c;border-radius:12px;padding:40px;text-align:center;max-width:650px;margin:40px auto 60px}
-.bundle-label{display:inline-block;background:#c9a84c;color:#000;padding:3px 14px;border-radius:4px;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:14px}
-.bundle h3{font-size:24px;color:#c9a84c;margin-bottom:8px}
-.bundle .bundle-desc{color:#777;font-size:14px;margin-bottom:14px;line-height:1.8}
-.bundle .bundle-prices{margin-bottom:18px}
-.bundle .old-price{text-decoration:line-through;color:#555;font-size:18px}
-.bundle .new-price{font-size:42px;font-weight:800;color:#c9a84c}
-.bundle .bundle-save{font-size:13px;color:#4caf50}
-.bundle-cta{display:inline-block;background:#c9a84c;color:#000;padding:14px 48px;border-radius:6px;font-weight:700;font-size:17px;transition:all .2s}
-.bundle-cta:hover{opacity:.85;transform:translateY(-1px)}
 
-.lead-magnet{padding:50px 20px;max-width:700px;margin:0 auto;text-align:center}
-.lead-magnet .lead-box{background:#0d0d0d;border:1px solid #1a1a1a;border-radius:10px;padding:32px}
-.lead-magnet h3{font-size:22px;color:#c9a84c;margin-bottom:8px}
-.lead-magnet .lead-desc{color:#777;font-size:14px;margin-bottom:18px}
-.lead-form{display:flex;gap:8px;max-width:440px;margin:0 auto}
-.lead-form input{flex:1;background:#141414;color:#e0e0e0;border:1px solid #252525;border-radius:6px;padding:12px 14px;font-size:15px;font-family:Arial,sans-serif}
-.lead-form input:focus{outline:none;border-color:#c9a84c}
-.lead-form button{background:#c9a84c;color:#000;border:none;border-radius:6px;padding:12px 24px;font-weight:700;font-size:15px;cursor:pointer;font-family:Arial,sans-serif;white-space:nowrap;transition:opacity .2s}
-.lead-form button:hover{opacity:.85}
-.lead-nospam{font-size:12px;color:#444;margin-top:10px}
 
-.expert{background:#0d0d0d;border:1px solid #1a1a1a;border-radius:10px;padding:36px 40px;max-width:750px;margin:0 auto;text-align:center}
-.expert-avatar{width:72px;height:72px;border-radius:50%;background:rgba(201,168,76,.15);border:2px solid #c9a84c;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;font-size:32px}
-.expert h3{font-size:20px;color:#c9a84c;margin-bottom:4px}
-.expert .role{font-size:14px;color:#888;margin-bottom:14px}
-.expert .bio{font-size:14px;color:#777;line-height:1.8;max-width:550px;margin:0 auto}
-.expert .stats{display:flex;gap:32px;justify-content:center;margin-top:20px;flex-wrap:wrap}
-.expert .stat-num{font-size:28px;font-weight:800;color:#c9a84c}
-.expert .stat-label{font-size:13px;color:#555}
-
-.affiliate{padding:50px 20px 70px;max-width:900px;margin:0 auto}
-.affiliate-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.affiliate{padding:50px 20px 70px;max-width:900px;margin:0 auto;text-align:center}
+.affiliate h2{margin-bottom:12px}
+.affiliate-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
 .aff-card{background:#0d0d0d;border:1px solid #1a1a1a;border-radius:8px;padding:18px;text-align:center;transition:border-color .2s}
 .aff-card:hover{border-color:#c9a84c}
 .aff-logo{width:48px;height:48px;border-radius:10px;margin:0 auto 10px;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;color:#fff}
@@ -131,10 +123,8 @@ a{color:inherit;text-decoration:none}
   .hero h1{font-size:32px}
   .hero .tagline{font-size:18px}
   .hero .sub{font-size:15px}
-  .lead-form{flex-direction:column}
-  .bundle{padding:24px}
-  .expert{padding:24px}
-  .expert .stats{gap:18px}
+  .course-tier{flex-direction:column}
+  .tier-thumb{width:100%;height:auto}
 }
 </style>
 </head>
@@ -144,12 +134,25 @@ a{color:inherit;text-decoration:none}
 
 <section class="hero">
   <div class="hero-badge">10&#43; Năm Kinh Nghiệm Trading &amp; Affiliate Tài Chính</div>
+  <div class="hero-logo">
+    <svg viewBox="0 0 64 64" width="80" height="80">
+      <circle cx="32" cy="32" r="30" fill="none" stroke="#c9a84c" stroke-width="2"/>
+      <circle cx="32" cy="32" r="24" fill="none" stroke="#c9a84c" stroke-width="0.6" opacity="0.3"/>
+      <path d="M16 42 Q16 22 32 22 Q48 22 48 42" stroke="#c9a84c" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <line x1="20" y1="46" x2="20" y2="18" stroke="#c9a84c" stroke-width="1.5" opacity="0.45"/>
+      <line x1="26" y1="46" x2="26" y2="18" stroke="#c9a84c" stroke-width="1.5" opacity="0.45"/>
+      <line x1="32" y1="46" x2="32" y2="18" stroke="#c9a84c" stroke-width="1.5" opacity="0.45"/>
+      <line x1="38" y1="46" x2="38" y2="18" stroke="#c9a84c" stroke-width="1.5" opacity="0.45"/>
+      <line x1="44" y1="46" x2="44" y2="18" stroke="#c9a84c" stroke-width="1.5" opacity="0.45"/>
+      <circle cx="32" cy="17" r="2" fill="#c9a84c"/>
+    </svg>
+  </div>
   <h1>JOURNAMATE</h1>
   <p class="tagline">Không chỉ là nhật ký giao dịch mà là Hệ thống trading toàn diện - Trading Operating System.</p>
   <p class="sub">Hành trình từ Pass quỹ đến Payout —<br>Tất cả được hỗ trợ bởi AI và 10&#43; năm kinh nghiệm thị trường thực tế.</p>
   <div class="cta-row">
     <a href="#products" class="cta">Xem Sản Phẩm</a>
-    <a href="#lead" class="cta-outline">Tải Checklist Pass Quỹ Miễn Phí</a>
+    <a href="https://t.me/tony_insider" class="cta-outline" target="_blank">Liên Hệ Telegram</a>
   </div>
   <p class="cta-sub">Được tin dùng bởi các trader hướng tới chuyên nghiệp. Không lý thuyết suông — kết quả thực tế.</p>
 </section>
@@ -176,6 +179,7 @@ a{color:inherit;text-decoration:none}
       </ul>
       <div class="prod-price">$20</div>
       <div class="prod-price-note">Thanh toán một lần. Dùng trọn đời.</div>
+      <div class="prod-trust"><span>&#x25B6;</span> Xem Demo miễn phí</div>
       <a href="https://tranverse487.gumroad.com/l/trading-journal" class="prod-cta" target="_blank">Mua Ngay</a>
       <span class="prod-detail-btn" onclick="scrollToDetail('detail-journal')">Xem Chi Tiết &#9660;</span>
     </div>
@@ -184,17 +188,18 @@ a{color:inherit;text-decoration:none}
       <div class="prod-badge">BEST VALUE</div>
       <img src="img/pass.png" alt="Prop Firm Pass System">
       <h3 class="prod-title">Hệ Thống Pass Quỹ & Payout</h3>
-      <p class="prod-desc">Hệ thống đã được kiểm chứng để vượt qua thử thách và Payout cùng với FTMO, Topstep, Bulenox. Không đoán mò. Không may rủi với Winrate >80%.</p>
+      <p class="prod-desc">Hệ thống đã được kiểm chứng để Pass và Payout các quỹ Futures như Topstep, Hola, Bulenox. Không đoán mò. Không may rủi với Winrate >80%.</p>
       <ul class="prod-features">
-        <li>Quy tắc vào/ra lệnh chính xác từng giai đoạn</li>
-        <li>Kế hoạch quản lý rủi ro chi tiết</li>
+        <li>Tips Pass & Payout winrate >80%</li>
+        <li>Phương pháp trade MNQ RR 1:3 trở lên</li>
         <li>Các lỗi thường gặp &amp; cách khắc phục</li>
-        <li>Cung cấp indicator hỗ trợ</li>
+        <li>Cung cấp indicator độc quyền</li>
         <li>Cách giữ và quản lý tài khoản</li>
         <li>Chiến lược payout mỗi tháng</li>
       </ul>
-      <div class="prod-price">$125</div>
+      <div class="prod-price">$600</div>
       <div class="prod-price-note">Thanh toán một lần. Bao gồm cập nhật tương lai.</div>
+      <div class="prod-trust"><span>&#x1F6E1;</span> Hoàn tiền 100% nếu nói sai sự thật</div>
       <a href="https://tranverse487.gumroad.com/l/propfirm-payout" class="prod-cta" target="_blank">Mua Ngay</a>
       <span class="prod-detail-btn" onclick="scrollToDetail('detail-pass')">Xem Chi Tiết &#9660;</span>
     </div>
@@ -203,7 +208,7 @@ a{color:inherit;text-decoration:none}
       <div class="prod-badge">COURSE</div>
       <img src="img/course.png" alt="Trading Course">
       <h3 class="prod-title">Khóa Học Trading Chuyên Sâu</h3>
-      <p class="prod-desc">Giáo trình toàn diện từ con số 0 đến khi trader được cấp vốn. Lý thuyết đi đôi với thực hành. Khóa học dành cho cả Newbie và những Trader đang thua lỗ.</p>
+      <p class="prod-desc">Giáo trình toàn diện từ con số 0 đến khi có lợi nhuận. Lý thuyết đi đôi với thực hành. Khóa học dành cho ai muốn trở thành trader thực thụ đi đường dài.</p>
       <ul class="prod-features">
         <li>Hiểu cấu trúc thị trường</li>
         <li>Bộ công cụ phân tích thực chiến</li>
@@ -212,28 +217,14 @@ a{color:inherit;text-decoration:none}
         <li>Q&amp;A riêng với người hướng dẫn</li>
         <li>Tặng Nhật ký giao dịch $20</li>
       </ul>
-      <div class="prod-price">$500</div>
+      <div class="prod-price">Contact</div>
       <div class="prod-price-note">Thanh toán một lần. Bao gồm tất cả module.</div>
-      <a href="https://tranverse487.gumroad.com/l/trading-course" class="prod-cta" target="_blank">Mua Ngay</a>
+      <div class="prod-trust"><span>&#x1F4AC;</span> Tư vấn 1-1 miễn phí</div>
+      <a href="https://forms.gle/Fuc3qZTHgK6HizA26" class="prod-cta" target="_blank">Đăng Ký Khóa Học</a>
       <span class="prod-detail-btn" onclick="scrollToDetail('detail-course')">Xem Chi Tiết &#9660;</span>
     </div>
   </div>
 
-  <div class="bundle">
-    <div class="bundle-label">Ưu Đãi Tốt Nhất</div>
-    <h3>Combo Trader Full Option</h3>
-    <p class="bundle-desc">
-      Nhật Ký &#43; Hệ Thống Pass Quỹ & Payout &#43; Khóa Học<br>
-      Tất cả những gì bạn cần để ghi chép, vượt qua thử thách và làm chủ trading.
-    </p>
-    <div class="bundle-prices">
-      <span class="old-price">$650</span>
-      <span class="new-price">$455</span>
-    </div>
-    <p class="bundle-save">Tiết kiệm $195 — giảm 30%</p>
-    <br>
-    <a href="https://tranverse487.gumroad.com/l/trader-combo" class="bundle-cta" target="_blank">Mua Combo</a>
-  </div>
 </section>
 
 <!-- Journal Detail -->
@@ -241,10 +232,12 @@ a{color:inherit;text-decoration:none}
   <h3>Nhật Ký Giao Dịch &amp; Portfolio</h3>
   <p class="detail-sub">Giao diện đầy đủ tính năng — từ Dashboard đến Report chi tiết</p>
   <div class="detail-gallery">
+    <img src="img/journal0.png" alt="Journal Capital" onclick="openLightbox(this.src)">
     <img src="img/journal1.png" alt="Journal Dashboard" onclick="openLightbox(this.src)">
     <img src="img/journal2.png" alt="Journal Trade Log" onclick="openLightbox(this.src)">
     <img src="img/journal3.png" alt="Journal Report" onclick="openLightbox(this.src)">
     <img src="img/journal4.png" alt="Journal Equity Curve" onclick="openLightbox(this.src)">
+    <img src="img/journal5.png" alt="Journal Setup" onclick="openLightbox(this.src)">
   </div>
   <span class="detail-back" onclick="scrollToDetail('products')">&#9650; Quay lại sản phẩm</span>
 </section>
@@ -253,58 +246,114 @@ a{color:inherit;text-decoration:none}
 <section class="detail-section" id="detail-pass">
   <h3>Hệ Thống Pass Quỹ &amp; Payout</h3>
   <p class="detail-sub">Proof thực tế — pass quỹ thành công & payout nhiều lần liên tiếp</p>
-  <div class="detail-gallery">
+  <div class="detail-gallery pass-gallery">
     <img src="img/pass1.png" alt="Pass Certificate 1" onclick="openLightbox(this.src)">
     <img src="img/pass2.png" alt="Pass Certificate 2" onclick="openLightbox(this.src)">
     <img src="img/pass3.png" alt="Payout Proof" onclick="openLightbox(this.src)">
   </div>
+  <div class="trust-banner"><span>&#x1F6E1;</span> Hoàn tiền 100% nếu nói sai sự thật</div>
   <span class="detail-back" onclick="scrollToDetail('products')">&#9650; Quay lại sản phẩm</span>
 </section>
 
 <!-- Course Detail -->
 <section class="detail-section" id="detail-course">
   <h3>Khóa Học Trading Chuyên Sâu</h3>
-  <p class="detail-sub">Giáo trình bài bản — từ lý thuyết đến thực hành trên thị trường thật</p>
-  <div class="detail-gallery">
-    <img src="img/course1.png" alt="Course Overview" onclick="openLightbox(this.src)">
-    <img src="img/course2.png" alt="Course Module" onclick="openLightbox(this.src)">
-    <img src="img/course3.png" alt="Course Example" onclick="openLightbox(this.src)">
+  <p class="detail-sub">Giáo trình bài bản — từ nền tảng đến Private mentorship 1-1</p>
+  <div class="course-content">
+    <div class="course-tier">
+      <div class="tier-num">1</div>
+      <div class="tier-info">
+        <h4>Khóa nền tảng</h4>
+        <ul>
+          <li>Cấu trúc thị trường cốt lõi</li>
+          <li>Bộ công cụ phân tích kỹ thuật</li>
+          <li>Quản trị vốn &amp; rủi ro</li>
+          <li>Checklist vào lệnh chuẩn</li>
+        </ul>
+      </div>
+      <div class="tier-thumb">
+        <svg viewBox="0 0 120 120" width="120" height="120">
+          <rect width="120" height="120" rx="6" fill="#0d0d0d" stroke="#232323" stroke-width="1"/>
+          <rect x="16" y="80" width="12" height="28" rx="2" fill="#c9a84c" opacity="0.6"/>
+          <rect x="34" y="60" width="12" height="48" rx="2" fill="#c9a84c" opacity="0.8"/>
+          <rect x="52" y="72" width="12" height="36" rx="2" fill="#c9a84c"/>
+          <rect x="70" y="44" width="12" height="64" rx="2" fill="#c9a84c"/>
+          <rect x="88" y="52" width="12" height="56" rx="2" fill="#c9a84c" opacity="0.9"/>
+          <polyline points="16,74 34,54 52,66 70,38 88,46" fill="none" stroke="#c9a84c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="16" cy="74" r="3.5" fill="#c9a84c"/>
+          <circle cx="34" cy="54" r="3.5" fill="#c9a84c"/>
+          <circle cx="52" cy="66" r="3.5" fill="#c9a84c"/>
+          <circle cx="70" cy="38" r="3.5" fill="#c9a84c"/>
+          <circle cx="88" cy="46" r="3.5" fill="#c9a84c"/>
+          <text x="60" y="16" text-anchor="middle" fill="#c9a84c" font-size="8" font-weight="700" font-family="Arial">FOUNDATION</text>
+        </svg>
+      </div>
+    </div>
+    <div class="course-tier">
+      <div class="tier-num">2</div>
+      <div class="tier-info">
+        <h4>Khóa nâng cao</h4>
+        <ul>
+          <li>Giải mã hành vi đám đông</li>
+          <li>Kiểm soát cảm xúc real-time</li>
+          <li>Cơ chế dòng tiền lớn</li>
+          <li>Xây dựng kỷ luật bền vững</li>
+        </ul>
+      </div>
+      <div class="tier-thumb">
+        <svg viewBox="0 0 120 120" width="120" height="120">
+          <rect width="120" height="120" rx="6" fill="#0d0d0d" stroke="#232323" stroke-width="1"/>
+          <circle cx="56" cy="48" r="8" fill="none" stroke="#c9a84c" stroke-width="2"/>
+          <circle cx="44" cy="64" r="6" fill="none" stroke="#c9a84c" stroke-width="1.5" opacity="0.7"/>
+          <circle cx="68" cy="68" r="7" fill="none" stroke="#c9a84c" stroke-width="1.5" opacity="0.8"/>
+          <circle cx="40" cy="78" r="5" fill="none" stroke="#c9a84c" stroke-width="1.2" opacity="0.5"/>
+          <circle cx="72" cy="52" r="5" fill="none" stroke="#c9a84c" stroke-width="1" opacity="0.6"/>
+          <circle cx="84" cy="60" r="4" fill="none" stroke="#c9a84c" stroke-width="1" opacity="0.4"/>
+          <circle cx="60" cy="78" r="6" fill="none" stroke="#c9a84c" stroke-width="1.5" opacity="0.6"/>
+          <circle cx="90" cy="76" r="5" fill="none" stroke="#c9a84c" stroke-width="1" opacity="0.3"/>
+          <line x1="56" y1="40" x2="50" y2="34" stroke="#c9a84c" stroke-width="1.5"/>
+          <line x1="56" y1="40" x2="62" y2="36" stroke="#c9a84c" stroke-width="1.5"/>
+          <line x1="56" y1="40" x2="48" y2="42" stroke="#c9a84c" stroke-width="1.5"/>
+          <line x1="56" y1="56" x2="68" y2="61" stroke="#c9a84c" stroke-width="1" opacity="0.6"/>
+          <line x1="56" y1="56" x2="44" y2="58" stroke="#c9a84c" stroke-width="1" opacity="0.5"/>
+          <line x1="44" y1="64" x2="40" y2="73" stroke="#c9a84c" stroke-width="0.8" opacity="0.4"/>
+          <line x1="68" y1="68" x2="72" y2="47" stroke="#c9a84c" stroke-width="0.8" opacity="0.4"/>
+          <circle cx="56" cy="48" r="3" fill="#c9a84c"/>
+          <text x="60" y="16" text-anchor="middle" fill="#c9a84c" font-size="8" font-weight="700" font-family="Arial">ADVANCED</text>
+        </svg>
+      </div>
+    </div>
+    <div class="course-tier">
+      <div class="tier-num">3</div>
+      <div class="tier-info">
+        <h4>Khóa Private Mentorship</h4>
+        <ul>
+          <li>Kèm 1-1 cá nhân hóa</li>
+          <li>Lộ trình thiết kế riêng</li>
+          <li>Hỗ trợ dài hạn không giới hạn</li>
+          <li>Rà soát &amp; vá lỗ hổng định kỳ</li>
+        </ul>
+      </div>
+      <div class="tier-thumb">
+        <svg viewBox="0 0 120 120" width="120" height="120">
+          <rect width="120" height="120" rx="6" fill="#0d0d0d" stroke="#232323" stroke-width="1"/>
+          <circle cx="36" cy="56" r="12" fill="none" stroke="#c9a84c" stroke-width="2"/>
+          <circle cx="36" cy="54" r="5" fill="#c9a84c"/>
+          <rect x="30" y="68" width="12" height="14" rx="3" fill="#c9a84c" opacity="0.7"/>
+          <circle cx="84" cy="56" r="12" fill="none" stroke="#c9a84c" stroke-width="2"/>
+          <circle cx="84" cy="54" r="5" fill="#c9a84c"/>
+          <rect x="78" y="68" width="12" height="14" rx="3" fill="#c9a84c" opacity="0.7"/>
+          <path d="M48,56 L72,56" fill="none" stroke="#c9a84c" stroke-width="1.5" stroke-dasharray="3,3"/>
+          <circle cx="60" cy="56" r="4" fill="#c9a84c" opacity="0.9"/>
+          <circle cx="60" cy="56" r="10" fill="#c9a84c" opacity="0.15"/>
+          <circle cx="60" cy="56" r="18" fill="#c9a84c" opacity="0.05"/>
+          <text x="60" y="16" text-anchor="middle" fill="#c9a84c" font-size="8" font-weight="700" font-family="Arial">MENTORSHIP</text>
+        </svg>
+      </div>
+    </div>
+    <a href="https://forms.gle/Fuc3qZTHgK6HizA26" class="course-cta" target="_blank">Đăng Ký Khóa Học</a>
   </div>
   <span class="detail-back" onclick="scrollToDetail('products')">&#9650; Quay lại sản phẩm</span>
-</section>
-
-<section class="lead-magnet" id="lead">
-  <div class="lead-box">
-    <div class="prod-icon">&#x1F4E5;</div>
-    <h3>Miễn Phí: 5 Setup Đã Pass Quỹ Thành Công</h3>
-    <p class="lead-desc">Tải ngay các setup chính xác mà người hướng dẫn đã dùng để vượt qua 8&#43; thử thách quỹ. PDF tức thì. Không lan man.</p>
-    <div class="lead-form">
-      <input type="email" placeholder="Email của bạn" id="leadEmail">
-      <button onclick="captureLead()">Tải PDF Miễn Phí</button>
-    </div>
-    <p class="lead-nospam">Không spam. Hủy đăng ký bất kỳ lúc nào.</p>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<section class="section">
-  <div class="expert">
-    <div class="expert-avatar">&#x1F4C8;</div>
-    <h3>Gặp Gỡ Người Hướng Dẫn</h3>
-    <p class="role">Trader &#183; Chiến Lược Affiliate &#183; 15&#43; Năm Kinh Nghiệm</p>
-    <p class="bio">
-      Hơn một thập kỷ rưỡi lăn lộn trên thị trường — giao dịch FX, crypto và chỉ số. Tôi đã vượt qua nhiều thử thách quỹ đến mức không đếm xuể, và đã giúp hàng trăm trader khác làm điều tương tự. Tôi không dạy những điều tôi chưa kiểm chứng bằng chính tiền của mình.
-      <br><br>
-      Trước đó, tôi đã xây dựng quan hệ đối tác affiliate với các sàn CFD lớn nhất châu Á. Tôi biết ngành này từ bên trong — cái gì hiệu quả, cái gì là lừa đảo, và lợi thế thực sự nằm ở đâu. Mọi sản phẩm tôi bán đều đã được kiểm chứng thực tế. Không màu mè. Không khoa trương.
-    </p>
-    <div class="stats">
-      <div><div class="stat-num">15&#43;</div><div class="stat-label">Năm Kinh Nghiệm</div></div>
-      <div><div class="stat-num">8&#43;</div><div class="stat-label">Quỹ Đã Pass</div></div>
-      <div><div class="stat-num">100&#43;</div><div class="stat-label">Học Viên Được Đào Tạo</div></div>
-      <div><div class="stat-num">$2M&#43;</div><div class="stat-label">Hoa Hồng Affiliate</div></div>
-    </div>
-  </div>
 </section>
 
 <section class="affiliate">
@@ -312,40 +361,40 @@ a{color:inherit;text-decoration:none}
   <div class="products-sub">Sàn và quỹ chúng tôi tin dùng — vì chính chúng tôi cũng dùng.</div>
   <div class="affiliate-grid" style="margin-top:30px">
     <div class="aff-card">
-      <img src="logo/ftmo.png" alt="FTMO" style="width:48px;height:48px;border-radius:8px;margin-bottom:8px">
-      <div class="aff-name">FTMO</div>
-      <div class="aff-type">Quỹ Cấp Vốn</div>
-      <a href="#" class="aff-link">Đăng Ký FTMO</a>
-    </div>
-    <div class="aff-card">
-      <img src="logo/hola.png" alt="Hola Prime" style="width:48px;height:48px;border-radius:8px;margin-bottom:8px">
+      <img src="https://www.google.com/s2/favicons?domain=holaprime.com&sz=128" alt="Hola Prime" style="width:48px;height:48px;border-radius:8px;margin-bottom:8px">
       <div class="aff-name">Hola Prime</div>
       <div class="aff-type">Quỹ Cấp Vốn</div>
-      <a href="#" class="aff-link">Đăng Ký Hola Prime</a>
+      <a href="https://holaprime.com/" class="aff-link" target="_blank">Đăng Ký Hola Prime</a>
     </div>
     <div class="aff-card">
-      <img src="logo/the5er.png" alt="The5ers" style="width:48px;height:48px;border-radius:8px;margin-bottom:8px">
+      <img src="https://www.google.com/s2/favicons?domain=the5ers.com&sz=128" alt="The5ers" style="width:48px;height:48px;border-radius:8px;margin-bottom:8px">
       <div class="aff-name">The5ers</div>
       <div class="aff-type">Quỹ Cấp Vốn</div>
-      <a href="#" class="aff-link">Đăng Ký The5ers</a>
+      <a href="https://the5ers.com/" class="aff-link" target="_blank">Đăng Ký The5ers</a>
     </div>
     <div class="aff-card">
-      <img src="logo/bingx.png" alt="BingX" style="width:48px;height:48px;border-radius:8px;margin-bottom:8px">
+      <img src="https://www.google.com/s2/favicons?domain=bingx.com&sz=128" alt="BingX" style="width:48px;height:48px;border-radius:8px;margin-bottom:8px">
       <div class="aff-name">BingX</div>
       <div class="aff-type">Sàn Crypto</div>
-      <a href="#" class="aff-link">Đăng Ký BingX</a>
+      <a href="https://bingxdao.com/invite/1F3LON/" class="aff-link" target="_blank">Mở Tài Khoản</a>
     </div>
     <div class="aff-card">
-      <img src="logo/exness.png" alt="Exness" style="width:48px;height:48px;border-radius:8px;margin-bottom:8px">
+      <img src="https://www.google.com/s2/favicons?domain=exness.com&sz=128" alt="Exness" style="width:48px;height:48px;border-radius:8px;margin-bottom:8px">
       <div class="aff-name">Exness</div>
       <div class="aff-type">Sàn Forex</div>
-      <a href="#" class="aff-link">Mở Tài Khoản</a>
+      <a href="https://www.exness.com/?utm_source=partners&amp;source=app&amp;ex_ol=1" class="aff-link" target="_blank">Mở Tài Khoản</a>
     </div>
     <div class="aff-card">
-      <img src="logo/bulenox.png" alt="Bulenox" style="width:48px;height:48px;border-radius:8px;margin-bottom:8px">
-      <div class="aff-name">Bulenox</div>
+      <img src="https://www.google.com/s2/favicons?domain=ftmo.com&sz=128" alt="FTMO" style="width:48px;height:48px;border-radius:8px;margin-bottom:8px">
+      <div class="aff-name">FTMO</div>
       <div class="aff-type">Quỹ Cấp Vốn</div>
-      <a href="#" class="aff-link">Đăng Ký Bulenox</a>
+      <a href="https://ftmo.com/" class="aff-link" target="_blank">Đăng Ký FTMO</a>
+    </div>
+    <div class="aff-card">
+      <img src="https://www.google.com/s2/favicons?domain=yrmprop.com&sz=128" alt="YRM" style="width:48px;height:48px;border-radius:8px;margin-bottom:8px">
+      <div class="aff-name">YRM</div>
+      <div class="aff-type">Quỹ Cấp Vốn</div>
+      <a href="https://yrmprop.com/auth/register/" class="aff-link" target="_blank">Đăng Ký YRM</a>
     </div>
   </div>
 </section>
@@ -400,13 +449,6 @@ function closeLightbox() {
   document.body.style.overflow = '';
 }
 
-function captureLead() {
-  var email = document.getElementById('leadEmail').value;
-  if (!email || !email.includes('@')) { alert('Vui lòng nhập email hợp lệ.'); return; }
-  // TODO: kết nối MailerLite / Beehiiv API
-  alert('Kiểm tra hộp thư. PDF đang được gửi đến bạn.');
-  document.getElementById('leadEmail').value = '';
-}
 </script>
 
 </body>
